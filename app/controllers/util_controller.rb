@@ -4,7 +4,7 @@ require 'RMagick'
 
 class UtilController < ApplicationController
 
-  API_URL = 'http://stage.services.machineshop.io/api/v0'
+  API_URL = 'http://stage.services.machineshop.io/api/v1'
 
   # mysql for local caching
   MachineShop.configure do |config|
