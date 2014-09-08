@@ -28,15 +28,14 @@ class UserController < ApplicationController
     redirect_to "/index"
   end
 
-  def index
-    puts " param value in index --------------------------- #{params[:login]}"
+  def index    
   	render "index"
   end
 
   def home
     begin
         @dis_list = Array.new
-        dis = MachineShop::DeviceInstance.all({}, session[:auth_token])
+        dis = MachineShop::DataSource.all({}, session[:auth_token])
         dis.to_a.each do |di|        
             @dis_list << [di['name'], di['_id']]
         end
