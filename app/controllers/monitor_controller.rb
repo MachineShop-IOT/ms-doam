@@ -1,11 +1,10 @@
-require 'RMagick'
 class MonitorController < ApplicationController
 
   # before_filter :require_signed_in_user
 
   def get_last_reports
     last_reports = Array.new
-    dis = MachineShop::DataSource.all({}, session[:auth_token])
+    dis = MachineShop::DataSources.all({}, session[:auth_token])
     dis.to_a.each do |di|        
         last_reports << di['last_report']
     end
@@ -20,7 +19,7 @@ class MonitorController < ApplicationController
 
   def get_sample_payload_data
     payload = Array.new
-    dis = MachineShop::DataSource.all({}, session[:auth_token])
+    dis = MachineShop::DataSources.all({}, session[:auth_token])
     dis.to_a.each do |di|
         if di['last_report'].present?
             if di['last_report']['payload'].present?

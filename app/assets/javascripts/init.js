@@ -14,6 +14,5 @@ $(document).ready(function(){
     initMap();
     getDevicesLastReports();
     attachMapListeners();
-
     buildPayloadTree();
 });

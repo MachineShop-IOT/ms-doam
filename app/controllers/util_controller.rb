@@ -1,19 +1,6 @@
-# require 'rest-client'
-require 'machineshop'
-require 'RMagick'
-
 class UtilController < ApplicationController
 
   API_URL = 'http://stage.services.machineshop.io/api/v1'
-
-  # mysql for local caching
-  MachineShop.configure do |config|
-    config.db_name = "machineshop"
-    config.db_username="root"
-    config.db_password="root"
-    config.db_host= "localhost"
-    config.expiry_time= lambda{120.seconds.ago}      
-  end
 
   def get_address_by_latlon()
 

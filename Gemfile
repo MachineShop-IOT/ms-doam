@@ -28,6 +28,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'machineshop', '~> 0.0.4'
+# gem 'test_machine_shop'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
